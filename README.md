@@ -10,3 +10,5 @@ The site on Azure is :
 https://ps6c.azurewebsites.net/
 and https://ps6c.azurewebsites.net/1/
 
+Azure CLI script in AZ.
+
