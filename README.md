@@ -8,7 +8,7 @@ https://docs.microsoft.com/en-us/azure/app-service/scripts/app-service-cli-conti
 
 The site on Azure is : 
 https://ps6c.azurewebsites.net/
-and https://ps6c.azurewebsites.net/1/
+and https://ps6c.azurewebsites.net/1/ etc.
 
 Azure CLI script in AZ.
 
