@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# use with azure-cli
+#
 
 gitrepo=https://github.com/PS6/C.git
 token=<generate in developer settings, hooks to be allowed>
