@@ -10,5 +10,7 @@ The site on Azure is :
 https://ps6c.azurewebsites.net/
 and https://ps6c.azurewebsites.net/1/ etc.
 
+The "KUDU" site is at https://ps6c.scm.azurewebsites.net/ (login is required)
+
 Azure CLI script in AZ.
 
