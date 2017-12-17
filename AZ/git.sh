@@ -4,7 +4,7 @@
 #
 
 gitrepo=https://github.com/PS6/C.git
-token=<generate in developer settings, hooks to be allowed>
+token=<generate in github, settings, developer settings, personal access token with hooks allowed>
 rgname=ps6c_RG
 webappname=ps6c
 # FQDN requires SKU >= SHARED and cname in domain
