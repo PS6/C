@@ -7,7 +7,7 @@ header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 exit;
 }
 $qstr = $_SERVER["QUERY_STRING"];
-$qhstr = hash('sha256', $qstr)
+$qhstr = hash('sha256', $qstr);
 ?>
 <html>
 <head>
