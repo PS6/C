@@ -8,6 +8,7 @@ exit;
 }
 $qstr = $_SERVER["QUERY_STRING"];
 $qhstr = hash('sha256', $qstr);
+$q2hstr = hash('sha256', $qhstr);
 ?>
 <html>
 <head>
@@ -16,6 +17,6 @@ hash <?=$qstr?>
 </title>
 </head>
 <body>
-<?=$qstr.' hash to '.$qhstr?>
+<?=$qstr.' hash to '.$qhstr?.' and 2x to '.$q2hstr>
 </body>
 </html>
