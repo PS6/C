@@ -17,6 +17,6 @@ hash <?=$qstr?>
 </title>
 </head>
 <body>
-<?=$qstr.' hash to '.$qhstr?.' and 2x to '.$q2hstr>
+<?=$qstr.' hash to '.$qhstr.' and 2x to '.$q2hstr?>
 </body>
 </html>
