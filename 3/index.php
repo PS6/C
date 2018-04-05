@@ -9,7 +9,7 @@ exit;
 $qstr = $_SERVER["QUERY_STRING"];
 $qhstr = hash('sha256', $qstr);
 $q2hstr = hash('sha256', $qhstr);
-$q3hstr = hash('sha256', $qhstr);
+$q3hstr = hash('sha256', $q2hstr);
 ?>
 <html>
 <head>
