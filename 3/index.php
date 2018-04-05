@@ -18,6 +18,6 @@ hash <?=$qstr?>
 </title>
 </head>
 <body>
-<?=$qstr.' hash to '.$qhstr.' <br>and 2x to '.$q2hstr.' <br>and 3x to'.$q3hstr?>
+<?=$qstr.' hash to : '.$qhstr.' <br>and 2x to : '.$q2hstr.' <br>and 3x to : '.$q3hstr?>
 </body>
 </html>
