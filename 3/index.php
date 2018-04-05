@@ -13,6 +13,17 @@ $q3hstr = hash('sha256', $q2hstr);
 ?>
 <html>
 <head>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+<style>
+*
+{
+  margin: 0;
+  padding: 0;  
+  font-family: Hack,monospace;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+</style>
 <title>
 hash <?=$qstr?>
 </title>
