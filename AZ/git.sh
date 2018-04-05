@@ -34,3 +34,7 @@ az webapp config hostname add --webapp-name $webappname --resource-group $rgname
 echo http://$webappname.azurewebsites.net
 # IF FQDN
 echo http://$fqdn (which is CNAME to url above)
+
+echo 'az group delete -n '$rgname
+echo 'az monitor activity-log list --resource-group '$rgname
+az monitor activity-log list --resource-group $rgname | jq .[].authorization.action
