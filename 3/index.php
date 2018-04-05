@@ -15,8 +15,7 @@ $q3hstr = hash('sha256', $q2hstr);
 <head>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
 <style>
-*
-{
+body {
   margin: 0;
   padding: 0;  
   font-family: Hack,monospace;
