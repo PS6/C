@@ -31,6 +31,11 @@ hash <?=$qstr?>
 </title>
 </head>
 <body>
-<?= '<br>'.$qstr.' hash to : '.$qhstr.' <br>and 2x to : '.$q2hstr.' <br>and 3x to : '.$q3hstr.' <br>and sig is : '.$sig.'<br>' ?>
+<?= '<br>'.$qstr.' hash to : '.$qhstr.\
+    ' <br>and 2x to : '.$q2hstr.\
+    ' <br>and 3x to : '.$q3hstr.\
+    ' <br>and sig is : '.$sig.\
+    ' <br>and secret is : '.$secret.\
+  '<br>' ?>
 </body>
 </html>
