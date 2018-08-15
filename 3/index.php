@@ -10,7 +10,8 @@ $qstr = $_SERVER["QUERY_STRING"];
 $qhstr = hash('sha256', $qstr);
 $q2hstr = hash('sha256', $qhstr);
 $q3hstr = hash('sha256', $q2hstr);
-$sig = hash_hmac('sha256', $q3hstr, $q3hstr)
+$secret = hex2bin("$q3hstr");
+$sig = hash_hmac('sha256', $q3hstr, $secret)
 ?>
 <html>
 <head>
@@ -20,6 +21,7 @@ body {
   margin: 0;
   padding: 0;  
   font-family: Hack,monospace;
+  font-size: 24px;
   margin-left: 20%;
   margin-right: 20%;
 }
