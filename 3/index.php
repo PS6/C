@@ -10,6 +10,7 @@ $qstr = $_SERVER["QUERY_STRING"];
 $qhstr = hash('sha256', $qstr);
 $q2hstr = hash('sha256', $qhstr);
 $q3hstr = hash('sha256', $q2hstr);
+$sig = hash_hmac('sha256', $q3hstr, $q3hstr)
 ?>
 <html>
 <head>
@@ -28,6 +29,6 @@ hash <?=$qstr?>
 </title>
 </head>
 <body>
-<?='<br>'.$qstr.' hash to : '.$qhstr.' <br>and 2x to : '.$q2hstr.' <br>and 3x to : '.$q3hstr?>
+<?= '<br>'.$qstr.' hash to : '.$qhstr.' <br>and 2x to : '.$q2hstr.' <br>and 3x to : '.$q3hstr.' <br>and sig is : '.$sig.'<br>' ?>
 </body>
 </html>
