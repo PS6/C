@@ -27,9 +27,9 @@ public function hash160($data)
 $qstr = $_SERVER["QUERY_STRING"];
 $qhstr = hash('sha256', $qstr);
 $q2hstr = hash256($qstr);
-$q3hstr = hash256('$qhstr);
+$q3hstr = hash256($qhstr);
 $q4hstr = hash('sha256',hex2bin($qhstr));
-$secret = hex2bin("$q3hstr");
+$secret = hex2bin($q3hstr);
 $secretstr = base64_encode($secret);
 $sig = hash_hmac('sha256', $q3hstr, $secret)
 ?>
