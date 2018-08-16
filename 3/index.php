@@ -6,20 +6,13 @@ header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 //Prevent the rest of the script from executing.    
 exit;
 }
-
-/***
-     * Bitcoin standard 256 bit hash function : double sha256
-     *
-     * @param string $data
-     * @return string (hexa)
-     */
   
-public function hash256($data)
+function hash256($data)
 {
     return hash('sha256', hex2bin(hash('sha256', $data)));
 }
 
-public function hash160($data)
+function hash160($data)
 {
     return hash('ripemd160', hex2bin(hash('sha256', $data)));
 } 
