@@ -7,7 +7,7 @@ $sigToken = hash_hmac('sha256', $Token, "B7&1(y^%mm0a12g&!09-g6yh4d");
 
 $snow = time();
 $cnow = (int)($output['time']/1000);
-$titlestr = "<title>". date("H:i:s e",$snow) ." - title </title>";
+$titlestr = "<title>". date("H:i:s e",$snow) ." - " . $_SERVER['SERVER_NAME'] . " - " . $_SERVER['REQUEST_URI'] . "</title>";
 
 ?>
 
