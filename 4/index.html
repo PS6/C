@@ -6,9 +6,9 @@
 <script>
     
 function createtoken() {
-    var key1 = CryptoJS.SHA256(">|j%`\xeMIrR/293(:e3:<;bO^`AcN\:]9/Qe{a2l<om^;mBMTpCcF}/r,KytowD^7\xn{W,`gYiXCKWeEntx\hjhAZ|TQ#~K{af}?:knrNo@!Q[h!yf~Rv4`)gVLKe");
-    var key2 = CryptoJS.SHA256("=c(NNo!$6Lh*{Hh]}F2jV4GAIHpA=x.Q4VR7R2sLbQbmX})B;L#%Yw\V\j?D0#zm1ikV64=BfU*Q8Hnf'Jj3}0Ai&.01hg7DI|i`VU:/O7K/{d=*Jz.dwa!1y3OH70%");
-    var key3 = CryptoJS.SHA256("{UKD3]pA{>C=X:Ob5J(=]I$xNlYwNKzB9s7iX$9(:Y]Zo^.{f:8@'d5WPA@8fgAgl9[W;l#)%<^>]^b,C`NRMo?V1o$}c;9Q(rc|;vXbI,lS;q'o{'\+q0zo*G5s'mX");
+    var key1 = CryptoJS.SHA256("uTTz1WM2QAWtt38NoMbORT6JLO1DtWnZer4K6vntRtC1Eqw");
+    var key2 = CryptoJS.SHA256("MDmnI2g7VPq3NfsYu0VjfrNkyXQhlQ09Xn2sz7RRMPffAls");
+    var key3 = CryptoJS.SHA256("f6ar8TLPdvcfjC9hDWveCa4v1A6g1yx4RShQySm8ymiexJb");
     var hashstr = window.location.hash.substring(1);
     var hash = CryptoJS.HmacSHA512(hashstr, key1);
     var smallhex = hash.substr(1, 4);
