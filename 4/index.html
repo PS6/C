@@ -9,8 +9,9 @@ function createtoken() {
     var key1 = CryptoJS.SHA256("uTTz1WM2QAWtt38NoMbORT6JLO1DtWnZer4K6vntRtC1Eqw");
     var key2 = CryptoJS.SHA256("MDmnI2g7VPq3NfsYu0VjfrNkyXQhlQ09Xn2sz7RRMPffAls");
     var key3 = CryptoJS.SHA256("f6ar8TLPdvcfjC9hDWveCa4v1A6g1yx4RShQySm8ymiexJb");
-    var hashstr = window.location.hash.substring(1);
+    var hashtag = window.location.hash.substring(1);
     var hash = CryptoJS.HmacSHA512(hashstr, key1);
+    var hashstr = hash.toString(CryptoJS.enc.Hex);
     var smallhex = hash.substr(1, 4);
     var number = parseInt("0x" + smallhex)
     var rehash = CryptoJS.HmacSHA512(hash, key2);
