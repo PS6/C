@@ -20,7 +20,7 @@ function createtoken() {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    window.location.replace("./loop?token=" + hashInBase64 + "&loop=" + i + "#" + qstr);
+    window.location.replace("./loop?token=" + hashInBase64 + "&loop=" + i + "#" + hashtag);
 }
 </script>
 </head>
