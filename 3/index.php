@@ -22,6 +22,7 @@ $qhstr = hash('sha256', $qstr);
 $q2hstr = hash256($qstr);
 $q3hstr = hash256(hex2bin($qhstr));
 $q4hstr = hash('sha256',hex2bin($qhstr));
+$q5hstr = hash('sha256',hex2bin($q3str));
 $secret = hex2bin($q3hstr);
 $secretstr = base64_encode($secret);
 $sig = hash_hmac('sha256', $q3hstr, $secret)
@@ -49,6 +50,7 @@ hash <?=$qstr?>
     ' <br>and 2 to   : '.$q2hstr.
     ' <br>and 3 to   : '.$q3hstr.
     ' <br>and 4 to   : '.$q4hstr.
+    ' <br>and 5 to   : '.$q5hstr.
     ' <br>and sig is : '.$sig.
     ' <br>and secret : '.$secretstr.
   '<br>' ?>
