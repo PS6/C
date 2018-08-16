@@ -6,10 +6,29 @@ header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 //Prevent the rest of the script from executing.    
 exit;
 }
+
+/***
+     * Bitcoin standard 256 bit hash function : double sha256
+     *
+     * @param string $data
+     * @return string (hexa)
+     */
+  
+public function hash256($data)
+{
+    return hash('sha256', hex2bin(hash('sha256', $data)));
+}
+
+public function hash160($data)
+{
+    return hash('ripemd160', hex2bin(hash('sha256', $data)));
+} 
+
 $qstr = $_SERVER["QUERY_STRING"];
 $qhstr = hash('sha256', $qstr);
-$q2hstr = hash('sha256', $qhstr);
-$q3hstr = hash('sha256', $q2hstr);
+$q2hstr = hash256($qstr);
+$q3hstr = hash256('$qhstr);
+$q4hstr = hash('sha256',hex2bin($qhstr));
 $secret = hex2bin("$q3hstr");
 $secretstr = base64_encode($secret);
 $sig = hash_hmac('sha256', $q3hstr, $secret)
@@ -32,11 +51,13 @@ hash <?=$qstr?>
 </title>
 </head>
 <body>
-<?= '<br>'.$qstr.' hash to : '.$qhstr.
-    ' <br>and 2x to : '.$q2hstr.
-    ' <br>and 3x to : '.$q3hstr.
+<?= '<br>'.$qstr.
+    ' <br>hash to    : '.$qhstr.
+    ' <br>and 2 to   : '.$q2hstr.
+    ' <br>and 3 to   : '.$q3hstr.
+    ' <br>and 4 to   : '.$q4hstr.
     ' <br>and sig is : '.$sig.
-    ' <br>and secret is : '.$secretstr.
+    ' <br>and secret : '.$secretstr.
   '<br>' ?>
 </body>
 </html>
