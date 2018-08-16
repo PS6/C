@@ -53,7 +53,8 @@ hash <?=$qstr?>
     ' <br>and 4 to   : '.$q4hstr.
     ' <br>and 5 to   : '.$q5hstr.
     ' <br>and sig is : '.$sig.
-    ' <br>and secret : '.$secretstr.
+    ' <br> secretstr : '.$secretstr.
+    ' <br> secret    : '.$secret.
   '<br>' ?>
 </body>
 </html>
