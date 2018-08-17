@@ -4,6 +4,8 @@ $qstr = $_SERVER["QUERY_STRING"];
 parse_str($qstr, $output);
 $Token = $output['token'];
 $Version = $output['version'];
+$Loop = $output['loop'];
+$Code = $output['code'];
 $Version += 1;
 $sigToken = hash_hmac('sha256', $Token, "B7&1(y^%mm0a12g&!09-g6yh4d");
 
@@ -21,6 +23,8 @@ $titlestr = "<title>". date("H:i:s e",$snow) ." - " . $_SERVER['SERVER_NAME'] . 
 <body>
 <? echo "Token    : " . $Token ?> <br>
 <? echo "sigToken : " . $sigToken ?> <br>
+<? echo "Code     : " . $Code ?> <br>
+<? echo "Version  : " . $Version ?> <br>
 <script>
 var qstr = window.location.hash.substring(1);
 var redstr = "../?" + <? echo $Version ?> + "#" + qstr;
