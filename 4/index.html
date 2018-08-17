@@ -26,16 +26,18 @@ function createtoken(tag,code) {
     var key3 = CryptoJS.SHA256("f6ar8TLPdvcfjC9hDWveCa4v1A6g1yx4RShQySm8ymiexJb");
     var hash1 = CryptoJS.HmacSHA512(tag, key1);
     var hash2 = CryptoJS.HmacSHA512(code, key2);
-    var hashstr = hash.toString(CryptoJS.enc.Hex);
-    var smallhex = hashstr.substr(3, 3);
-    var number = parseInt("0x" + smallhex)
+    var hash1hex = hash1.toString(CryptoJS.enc.Hex);
+    var hash2hex = hash2.toString(CryptoJS.enc.Hex);
+    var hex1 = hashstr.substr(1, 2);
+    var hex2 = hashstr.substr(1, 1);
+    var number = parseInt("0x" + hex1 + hex2)
     var rehash = CryptoJS.HmacSHA512(hash1, hash2);
     var i;
     for (i = 0; i < 2345+number; i++) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    window.location.replace("./loop?token=" + hashInBase64 + "&loop=" + i + "#" + hashtag);
+    window.location.replace("./loop?token=" + hashInBase64 + "&code=" + code + "&loop=" + i + "#" + hashtag);
 }
 </script>
 </head>
