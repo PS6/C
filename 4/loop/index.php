@@ -23,7 +23,7 @@ $titlestr = "<title>". date("H:i:s e",$snow) ." - " . $_SERVER['SERVER_NAME'] . 
 <? echo "sigToken : " . $sigToken ?> <br>
 <script>
 var qstr = window.location.hash.substring(1);
-var redstr = "../?" + $Version + "#" + qstr;
+var redstr = "../?" + <? echo $Version ?> + "#" + qstr;
 //setTimeout(function(){alert(redstr)}, 10000);
 document.writeln('<br><a href=' + redstr + '>direct redirect</a>');
 setTimeout(function(){location.assign(redstr)}, 590000);
