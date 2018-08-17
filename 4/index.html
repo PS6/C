@@ -7,16 +7,16 @@
 function testhashtag() {
     var hashtag = window.location.hash.substring(1);
     if (0 === hashtag.length) {
-        window.location.replace("./start");
+        setTimeout(function(){ window.location.replace("./start"); }, 5000);
     } else {
         var code = "::1";
         var str = hashtag + code;
         alert(hashtag + code);
         var res = str.split(":");
         if (0 === res[1].length) {
-    	    window.location.replace("./askcode#" + hashtag);
+            setTimeout(function(){ window.location.replace("./askcode#" + hashtag); }, 5000);
         } else {
-            creattoken(res[0],res[1],hashtag);
+            createtoken(res[0],res[1],hashtag);
         }
     }
 }
@@ -38,10 +38,11 @@ function createtoken(tag,code,hashtag) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    window.location.replace("./loop?token=" + hashInBase64 + "&code=" + code + "&loop=" + i + "#" + hashtag);
+    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&code=" + code + "&loop=" + i + "#" + hashtag); }, 5000);
 }
+    
 </script>
 </head>
-<body onload="javascript:createtoken()">
+<body onload="javascript:testhashtag()">
 </body>
 </html>
