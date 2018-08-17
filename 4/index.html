@@ -15,12 +15,12 @@ function testhashtag() {
         if (0 === res[1].length) {
     	    window.location.replace("./askcode#" + hashtag);
         } else {
-            creattoken(res[0],res[1]);
+            creattoken(res[0],res[1],hashtag);
         }
     }
 }
     
-function createtoken(tag,code) {
+function createtoken(tag,code,hashtag) {
     var key1 = CryptoJS.SHA256("uTTz1WM2QAWtt38NoMbORT6JLO1DtWnZer4K6vntRtC1Eqw");
     var key2 = CryptoJS.SHA256("MDmnI2g7VPq3NfsYu0VjfrNkyXQhlQ09Xn2sz7RRMPffAls");
     var key3 = CryptoJS.SHA256("f6ar8TLPdvcfjC9hDWveCa4v1A6g1yx4RShQySm8ymiexJb");
