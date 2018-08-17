@@ -3,6 +3,8 @@ date_default_timezone_set("UTC");
 $qstr = $_SERVER["QUERY_STRING"];
 parse_str($qstr, $output);
 $Token = $output['token'];
+$Version = $output['version'];
+$Version += 1;
 $sigToken = hash_hmac('sha256', $Token, "B7&1(y^%mm0a12g&!09-g6yh4d");
 
 $snow = time();
@@ -21,7 +23,7 @@ $titlestr = "<title>". date("H:i:s e",$snow) ." - " . $_SERVER['SERVER_NAME'] . 
 <? echo "sigToken : " . $sigToken ?> <br>
 <script>
 var qstr = window.location.hash.substring(1);
-var redstr = "../#" + qstr;
+var redstr = "../?" + $Version + "#" + qstr;
 //setTimeout(function(){alert(redstr)}, 10000);
 document.writeln('<br><a href=' + redstr + '>direct redirect</a>');
 setTimeout(function(){location.assign(redstr)}, 590000);
