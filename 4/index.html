@@ -5,17 +5,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" integrity="sha256-u6BamZiW5tCemje2nrteKC2KoLIKX9lKPSpvCkOhamw=" crossorigin="anonymous"></script>
 <script>
 function testhashtag() {
-    var hashtag = window.location.hash.substring(1);
-    var urlstr = window.location.hash.substring(0);
-    if (0 === hashtag.length) {
+    var urlstr = window.location.href;
+    var tagonly = window.location.hash.substring(1);
+    var hashtag = window.location.hash.substring(0);
+    if (0 === tagonly.length) {
         setTimeout(function(){ window.location.replace("./start"); }, 5000);
     } else {
         var code = "::1";
-        var str = hashtag + code;
-        alert(urlstr + "_#_" + hashtag + "_:_" + code);
+        var str = tagonly + code;
+        alert(urlstr + "_#_" + tagonly + "_:_" + code);
         var res = str.split(":");
         if (0 === res[1].length) {
-            setTimeout(function(){ window.location.replace("./askcode#" + hashtag); }, 5000);
+            setTimeout(function(){ window.location.replace("./askcode" + hashtag); }, 5000);
         } else {
             createtoken(res[0],res[1],hashtag);
         }
@@ -39,7 +40,7 @@ function createtoken(tag,code,hashtag) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&code=" + code + "&loop=" + i + "#" + hashtag); }, 5000);
+    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&code=" + code + "&loop=" + i + hashtag); }, 500);
 }
     
 </script>
