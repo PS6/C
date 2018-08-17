@@ -42,7 +42,7 @@ function createtoken(tag,code,hashtag,version) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "$version=" + version + "&code=" + code + "&loop=" + i + hashtag); }, 500);
+    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&version=" + version + "&code=" + code + "&loop=" + i + hashtag); }, 500);
 }
     
 </script>
