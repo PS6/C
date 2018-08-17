@@ -5,7 +5,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" integrity="sha256-u6BamZiW5tCemje2nrteKC2KoLIKX9lKPSpvCkOhamw=" crossorigin="anonymous"></script>
 <script>
 function testhashtag() {
-    var urlstr = window.location.href;
+    var searchstr = window.location.search;
     var tagonly = window.location.hash.substring(1);
     var hashtag = window.location.hash.substring(0);
     if (0 === tagonly.length) {
@@ -13,7 +13,7 @@ function testhashtag() {
     } else {
         var code = "::1";
         var str = tagonly + code;
-        alert(urlstr + "_#_" + tagonly + "_:_" + code);
+        alert(searchstr + "_#_" + tagonly + "_:_" + code);
         var res = str.split(":");
         if (0 === res[1].length) {
             setTimeout(function(){ window.location.replace("./askcode" + hashtag); }, 5000);
