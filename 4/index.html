@@ -20,12 +20,12 @@ function testhashtag() {
         if (0 === res[1].length) {
             setTimeout(function(){ window.location.replace("./askcode" + hashtag); }, 5000);
         } else {
-            createtoken(res[0],res[1],hashtag);
+            createtoken(res[0],res[1],hashtag,version);
         }
     }
 }
     
-function createtoken(tag,code,hashtag) {
+function createtoken(tag,code,hashtag,version) {
     var key1 = CryptoJS.SHA256("uTTz1WM2QAWtt38NoMbORT6JLO1DtWnZer4K6vntRtC1Eqw");
     var key2 = CryptoJS.SHA256("MDmnI2g7VPq3NfsYu0VjfrNkyXQhlQ09Xn2sz7RRMPffAls");
     var key3 = CryptoJS.SHA256("f6ar8TLPdvcfjC9hDWveCa4v1A6g1yx4RShQySm8ymiexJb");
@@ -42,7 +42,7 @@ function createtoken(tag,code,hashtag) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&code=" + code + "&loop=" + i + hashtag); }, 500);
+    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "$version=" + version + "&code=" + code + "&loop=" + i + hashtag); }, 500);
 }
     
 </script>
