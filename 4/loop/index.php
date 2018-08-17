@@ -19,6 +19,17 @@ $titlestr = "<title>". date("H:i:s e",$snow) ." - " . $_SERVER['SERVER_NAME'] . 
 <html>
 <head>
 <? echo $titlestr ?>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+<style>
+body {
+  margin: 0;
+  padding: 0;  
+  font-family: Hack,monospace;
+  font-size: 24px;
+  margin-left: 20%;
+  margin-right: 20%;
+}      
+</style>
 </head>
 <body>
 <? echo "Token    : " . $Token ?> <br>
