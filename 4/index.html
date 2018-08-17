@@ -6,12 +6,13 @@
 <script>
 function testhashtag() {
     var hashtag = window.location.hash.substring(1);
+    var urlstr = window.location.hash.substring(0);
     if (0 === hashtag.length) {
         setTimeout(function(){ window.location.replace("./start"); }, 5000);
     } else {
         var code = "::1";
         var str = hashtag + code;
-        alert(hashtag + code);
+        alert(urlstr + "_#_" + hashtag + "_:_" + code);
         var res = str.split(":");
         if (0 === res[1].length) {
             setTimeout(function(){ window.location.replace("./askcode#" + hashtag); }, 5000);
