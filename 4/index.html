@@ -9,8 +9,9 @@ function testhashtag() {
     if (0 === hashtag.length) {
         window.location.replace("./start");
     } else {
-        var code = ":empty:1";
+        var code = "::1";
         var str = hashtag + code;
+        alert(hashtag + code);
         var res = str.split(":");
         if (0 === res[1].length) {
     	    window.location.replace("./askcode#" + hashtag);
