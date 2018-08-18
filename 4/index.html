@@ -34,15 +34,15 @@ function createtoken(tag,code,hashtag,version) {
     var hash1hex = hash1.toString(CryptoJS.enc.Hex);
     var hash2hex = hash2.toString(CryptoJS.enc.Hex);
     var hex1 = hash1hex.substr(1, 2);
-    var hex2 = hash2hex.substr(1, 1);
+    var hex2 = hash2hex.substr(1, 2);
     var number = parseInt("0x" + hex1 + hex2)
     var rehash = CryptoJS.HmacSHA512(hash1, hash2);
     var i;
-    for (i = 0; i < 2345+number; i++) {
+    for (i = 0; i < 1234+number; i++) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&version=" + version + "&code=" + code + "&loop=" + i + hashtag); }, 500);
+    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&hex1=" + hex1 + "&hex2=" + hex2 + "&version=" + version + "&code=" + code + "&loop=" + i + hashtag); }, 500);
 }
     
 </script>
