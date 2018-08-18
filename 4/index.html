@@ -35,7 +35,8 @@ function createtoken(tag,code,hashtag,version) {
     var hash2hex = hash2.toString(CryptoJS.enc.Hex);
     var hex1 = hash1hex.substr(1, 2);
     var hex2 = hash2hex.substr(1, 2);
-    var number = parseInt("0x" + hex1 + hex2)
+    var number = parseInt("0x" + hex1 + hex2);
+    number %= 1024;
     var rehash = CryptoJS.HmacSHA512(hash1, hash2);
     var i;
     for (i = 0; i < 1234+number; i++) {
