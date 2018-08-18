@@ -5,6 +5,8 @@ parse_str($qstr, $output);
 $Token = $output['token'];
 $Version = $output['version'];
 $Loop = $output['loop'];
+$Hex1 = $output['hex1'];
+$Hex2 = $output['hex2'];
 $Code = $output['code'];
 $Version += 1;
 $sigToken = hash_hmac('sha256', $Token, "B7&1(y^%mm0a12g&!09-g6yh4d");
@@ -36,6 +38,8 @@ body {
 <? echo "sigToken : " . $sigToken ?> <br>
 <? echo "Code     : " . $Code ?> <br>
 <? echo "Loop     : " . $Loop ?> <br>
+<? echo "Hex1     : " . $Hex1 ?> <br>
+<? echo "Hex2     : " . $Hex2 ?> <br>
 <? echo "Version  : " . $Version ?> <br>
 <script>
 var qstr = window.location.hash.substring(1);
