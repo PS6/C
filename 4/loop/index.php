@@ -35,6 +35,7 @@ body {
 <? echo "Token    : " . $Token ?> <br>
 <? echo "sigToken : " . $sigToken ?> <br>
 <? echo "Code     : " . $Code ?> <br>
+<? echo "Loop     : " . $Loop ?> <br>
 <? echo "Version  : " . $Version ?> <br>
 <script>
 var qstr = window.location.hash.substring(1);
