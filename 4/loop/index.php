@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set("UTC");
 $qstr = $_SERVER["QUERY_STRING"];
-str_replace('+','%2B',$qstr);
+str_replace('+','%20',$qstr);
 parse_str($qstr, $output);
 $Token = $output['token'];
 $Version = $output['version'];
@@ -35,6 +35,7 @@ body {
 </style>
 </head>
 <body>
+<? echo 'raw qstr : ' . $qstr ?> <br>
 <? echo 'Datetime : ' . date("H:i:s e",$snow) ?> <br>
 <? echo 'Token    : ' . $Token ?> <br>
 <? echo "sigToken : " . $sigToken ?> <br>
