@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set("UTC");
 $qstr = $_SERVER["QUERY_STRING"];
-parse_str(urlencode($qstr), $output);
+parse_str($qstr, $output);
 $Token = $output['token'];
 $Version = $output['version'];
 $Loop = $output['loop'];
