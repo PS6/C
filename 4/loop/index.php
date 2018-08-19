@@ -34,8 +34,8 @@ body {
 </style>
 </head>
 <body>
-<? echo "Datetime : " . date("H:i:s e",$snow) ?> <br>
-<? echo "Token    : " . $Token ?> <br>
+<? echo 'Datetime : ' . date("H:i:s e",$snow) ?> <br>
+<? echo 'Token    : ' . $Token ?> <br>
 <? echo "sigToken : " . $sigToken ?> <br>
 <? echo "Code     : " . $Code ?> <br>
 <? echo "Loop     : " . $Loop ?> <br>
