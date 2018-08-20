@@ -30,7 +30,9 @@ var b = a / Math.sqrt(3);
 var c = 0;
 var d = Math.floor(width/a/2)+2;
 var e = Math.floor(height/b/3)+2;
-
+var f = Math.floor(Math.random() * 360);
+var fc = hsl((f)+", 100%, 25%");
+    
 function cube(paper, tone, light, x ,y) {
     var offset = Math.floor(y % 2) * (a+2*c);
     var path = paper.path('M0 0 l ' + a + ' ' + -b + ' l ' + -a + ' ' + -b + ' l ' + -a + ' ' + b + ' z')
@@ -46,7 +48,7 @@ for (i = 0; i < d+1; i++) {
     for (j = 0; j < e+1; j++) {
         var random = Math.floor(Math.random() * 99);
         if (random > -1) {
-            cube(draw,((i * 7) + (j * 31)+119),9,i-1,j-1);
+            cube(draw,((i * 7) + (j * 31)+f),9,i-1,j-1);
         }
     }
 }
