@@ -31,7 +31,7 @@ var c = 0;
 var d = Math.floor(width/a/2)+2;
 var e = Math.floor(height/b/3)+2;
 var f = Math.floor(Math.random() * 360);
-var fc = hsl((f)+", 100%, 25%");
+var fc = "hsl(f, 100%, 25%)";
     
 function cube(paper, tone, light, x ,y) {
     var offset = Math.floor(y % 2) * (a+2*c);
@@ -61,7 +61,7 @@ var tagstr = window.location.hash.substring(1);
     value: tagstr,
     background: "white",
     backgroundAlpha: 0.0,
-    foreground: "#080679",
+    foreground: fc,
     foregroundAlpha: 0.7,
     level: 'L',
     padding: 0,
