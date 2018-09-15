@@ -13,10 +13,10 @@ function testhashtag() {
     if (0 === tagonly.length) {
         setTimeout(function(){ window.location.replace("./start"); }, 5000);
     } else {
-        var code = "::1";
+        var code = "!!1";
         var str = tagonly + code;
-        /* alert(version + "_" + searchstr + "_#_" + tagonly + "_:_" + code); */
-        var res = str.split(":");
+        /* alert(version + "_" + searchstr + "_#_" + tagonly + "_!_" + code); */
+        var res = str.split("!");
         if (0 === res[1].length) {
             setTimeout(function(){ window.location.replace("./askcode" + hashtag); }, 5000);
         } else {
