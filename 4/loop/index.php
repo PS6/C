@@ -5,10 +5,10 @@ $rawqstr = str_replace('+','%2B',$qstr);
 parse_str($rawqstr, $output);
 $Token = $output['token'];
 $Version = $output['version'];
-$Loop = $output['loop'];
-$Hex1 = $output['hex1'];
-$Hex2 = $output['hex2'];
-$Code = $output['code'];
+$Loop = $_GET['loop'];
+$Hex1 = $_GET['hex1'];
+$Hex2 = $_GET['hex2'];
+$Code = $_GET['code'];
 $Version += 1;
 $sigToken = hash_hmac('sha256', $Token, "B7&1(y^%mm0a12g&!09-g6yh4d");
 
