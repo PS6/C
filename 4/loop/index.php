@@ -1,10 +1,7 @@
 <?php
 date_default_timezone_set("UTC");
-$qstr = $_SERVER["QUERY_STRING"];
-$rawqstr = str_replace('+','%2B',$qstr);
-parse_str($rawqstr, $output);
-$Token = $output['token'];
-$Version = $output['version'];
+$Token = $_GET['token'];
+$Version = $_GET['version'];
 $Loop = $_GET['loop'];
 $Hex1 = $_GET['hex1'];
 $Hex2 = $_GET['hex2'];
