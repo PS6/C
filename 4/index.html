@@ -43,7 +43,7 @@ function createtoken(tag,code,hashtag,version) {
         rehash = CryptoJS.HmacSHA512(rehash, key3);
     }
     var hashInBase64 = CryptoJS.enc.Base64.stringify(rehash);
-    setTimeout(function(){ window.location.replace("./loop?token=" + hashInBase64 + "&hex1=" + hex1 + "&hex2=" + hex2 + "&version=" + version + "&code=" + code + "&tag=" + tag + "&loop=" + i + hashtag); }, 500);
+    setTimeout(function(){ window.location.replace("./loop?tag=" + tag + "&token=" + hashInBase64 + "&hex1=" + hex1 + "&hex2=" + hex2 + "&version=" + version + "&code=" + code + "&tag=" + tag + "&loop=" + i + hashtag); }, 500);
 }
     
 </script>
