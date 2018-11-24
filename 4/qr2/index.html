@@ -4,60 +4,35 @@
 <script type="text/javascript" src="./qrious.min.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1, width=device-width">
-<title>
-Cubes
-</title>
-<style>
-body {
-    background-color: #dddddd;
+<style type="text/css">
+body { 
+margin: 0;
+padding: 0; 
+background-color: #FFFFFF;
+background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>\
+<linearGradient id='gradient1'>\
+<stop offset='10%' stop-color='rgb(255,192,128)'/>\
+<stop offset='50%' stop-color='rgb(255,255,128)'/>\
+<stop offset='90%' stop-color='rgb(192,255,128)'/>\
+</linearGradient><circle fill='url(%23gradient1)' cx='32' cy='32' r='32' width='100%' height='100%'/>\
+</svg>");
 }
-.qr1 {
-    transform: rotate(45.00deg);
+.qr0 {
     position: absolute;
-    left: 666px;
-    top: 319px;
+    left: 256px;
+    top: 256px;
 }
 </style>
 </head>
 <body>
-<div id=drawing></div>
-<script type="text/javascript">
-var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-
-var a = 97;
-var b = a / Math.sqrt(3);
-var c = 0;
-var d = Math.floor(width/a/2)+2;
-var e = Math.floor(height/b/3)+2;
-var f = Math.floor(Math.random() * 360);
-var fc = "hsl("+(f+120)+", 100%, 25%)";
-    
-function cube(paper, tone, light, x ,y) {
-    var offset = Math.floor(y % 2) * (a+2*c);
-    var path = paper.path('M0 0 l ' + a + ' ' + -b + ' l ' + -a + ' ' + -b + ' l ' + -a + ' ' + b + ' z')
-    path.fill("hsl("+(tone)+", 90%, "+(90-1.5*light)+"%)").move((2*a+4*c)*x + 2*c + offset, (3*b+4*c)*y + c)
-    var path = paper.path('M0 0 l ' + -a + ' ' + -b + ' v ' + 2*b + ' l ' + a + ' ' + b + ' z')
-    path.fill("hsl("+(tone)+", 90%, "+(90-2*light)+"%)").move((2*a+4*c)*x +c + offset, (3*b+4*c)*y + b + 2*c)
-    var path = paper.path('M0 0 l ' + a + ' ' + -b + ' v ' + 2*b + ' l ' + -a + ' ' + b + ' z')
-    path.fill("hsl("+(tone)+", 90%, "+(90-2.8*light)+"%)").move((2*a+4*c)*x + a + 3*c + offset, (3*b+4*c)*y + b + 2*c)
-}
-
-var draw = SVG('drawing').size(d*(2*a+4*c), e*(3*b+4*c));
-for (i = 0; i < d+1; i++) {
-    for (j = 0; j < e+1; j++) {
-        var random = Math.floor(Math.random() * 99);
-        if (random > -1) {
-            cube(draw,((i * 7) + (j * 31)+f),9,i-1,j-1);
-        }
-    }
-}
-draw.viewbox(0, 0, width, height);
-document.write(f + '<br>' + fc + '<br><img id="qr1" class="qr1">');
+<div class="imagetest">
+<img id="qr0" class="qr0">
+<script>
 var tagstr = window.location.hash.substring(1);
 (function() {
   const qr1 = new QRious({
-    element: document.getElementById('qr1'),
+    element: document.getElementById('qr0'),
     value: tagstr,
     background: "white",
     backgroundAlpha: 0.0,
