@@ -1,6 +1,6 @@
 # C/4
 
-Here we have a javascript tag inspaect script to get going
+Here we have a javascript tag inspect script to get going
 
 Is there a tag, and a code start processing.
 
