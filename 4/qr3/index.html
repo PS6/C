@@ -18,10 +18,11 @@ background-image:
   );
 }
 .qr0 {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    bottom-padding: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10%;
+  bottom-padding: 10%;
 }
 </style>
 </head>
@@ -37,8 +38,8 @@ var tagstr = window.location.hash.substring(1);
     value: tagstr,
     background: "white",
     backgroundAlpha: 0.0,
-    foreground: "navy",
-    foregroundAlpha: 0.6,
+    foreground: "black",
+    foregroundAlpha: 0.5,
     level: 'L',
     padding: 0,
     size: 630
