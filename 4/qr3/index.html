@@ -1,14 +1,50 @@
-<style>
-body {
+<html>
+<head>
+<script type="text/javascript" src=https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.5.1/svg.min.js></script>
+<script type="text/javascript" src="./qrious.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<style type="text/css">
+body { 
+margin: 0;
+padding: 0; 
 background-image:
-    linear-gradient(
-      to right, 
-      hsla(0,100%,75%,1.0),
-      hsla(60,100%,75%,1.0),
-      hsla(120,100%,75%,1.0),
-      hsla(180,100%,75%,1.0),
-      hsla(240,100%,75%,1.0),
-      hsla(300,100%,75%,1.0)
-    );
+  linear-gradient(
+  to right, 
+  hsla(0,100%,75%,1.0),
+  hsla(60,100%,75%,1.0),
+  hsla(120,100%,75%,1.0),
+  hsla(180,100%,75%,1.0),
+  hsla(240,100%,75%,1.0),
+  hsla(300,100%,75%,1.0)
+  );
+}
+.qr0 {
+    position: absolute;
+    left: 210px;
+    top: 210px;
 }
 </style>
+</head>
+<body>
+<div class="imagetest">
+<img id="qr0" class="qr0">
+</div>
+<script>
+var tagstr = window.location.hash.substring(1);
+(function() {
+  const qr1 = new QRious({
+    element: document.getElementById('qr0'),
+    value: tagstr,
+    background: "white",
+    backgroundAlpha: 0.0,
+    foreground: "navy",
+    foregroundAlpha: 0.6,
+    level: 'L',
+    padding: 0,
+    size: 630
+  })
+})()
+</script>
+</body>
+</html>
