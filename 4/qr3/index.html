@@ -32,6 +32,7 @@ background-image:
 </div>
 <script>
 var tagstr = window.location.hash.substring(1);
+document.title = tagstr;
 (function() {
   const qr1 = new QRious({
     element: document.getElementById('qr0'),
