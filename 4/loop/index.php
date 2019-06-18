@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set("UTC");
-$useragent = $_SERVER ['HTTP_USER_AGENT'];
+$useragent = $_SERVER['HTTP_USER_AGENT'];
 $Token = $_GET['token'];
 $Version = $_GET['version'];
 $Loop = $_GET['loop'];
