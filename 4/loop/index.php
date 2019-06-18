@@ -1,5 +1,6 @@
 <?php
 date_default_timezone_set("UTC");
+$useragent = $_SERVER ['HTTP_USER_AGENT'];
 $Token = $_GET['token'];
 $Version = $_GET['version'];
 $Loop = $_GET['loop'];
@@ -42,6 +43,7 @@ body {
 <? echo "Hex1     : " . $Hex1 ?> <br>
 <? echo "Hex2     : " . $Hex2 ?> <br>
 <? echo "Version  : " . $Version ?> <br>
+<? echo "UserAgent: " . $useragent ?> <br>
 <script>
 var qstr = window.location.hash.substring(1);
 var redstr = "../?" + <? echo $Version ?> + "#" + qstr;
